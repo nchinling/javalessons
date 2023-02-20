@@ -1,5 +1,6 @@
 package myapp;
 
+import java.io.DataOutputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -19,19 +20,31 @@ public class PrintStreamDemo{
 
         try{
         FileOutputStream fos = new FileOutputStream("class.txt");
-        PrintStream ps = new PrintStream(fos);
+        // PrintStream ps = new PrintStream(fos);
+
+        //Using DataOutputStream allows file to be written in the data's 
+        //original data type.
+
+        DataOutputStream dos = new DataOutputStream(fos);
 
         Student s = new Student();
         s.rollno = 10;
-        s.name = "Ling";
-        s.dept = "CPE";
+        s.name = "Chin Ling";
+        s.dept = "NUS CPE";
 
-        ps.println(s.rollno);
-        ps.println(s.name);
-        ps.println(s.dept);
+        dos.writeInt(s.rollno);
+        dos.writeUTF(s.name);
+        dos.writeUTF(s.dept);
 
-        ps.close();
+        dos.close();
         fos.close();
+
+        // ps.println(s.rollno);
+        // ps.println(s.name);
+        // ps.println(s.dept);
+
+        // ps.close();
+        // fos.close();
         
         } catch(FileNotFoundException e){
             e.printStackTrace();
