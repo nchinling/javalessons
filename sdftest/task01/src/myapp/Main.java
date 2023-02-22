@@ -65,13 +65,13 @@ public class Main{
 
                 System.out.println("Nice!");
 
-
-                ois.close();
-                // dis.close();
-                is.close();
-                sock.close();
             
             // }
+
+            ois.close();
+            // dis.close();
+            is.close();
+            sock.close();
 
             
         } catch (EOFException e){
