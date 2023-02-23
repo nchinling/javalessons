@@ -1,0 +1,6 @@
+#Laptop
+#Wed Feb 22 11:25:23 SGT 2023
+Brand=Lenovo
+Model=ThinkPad
+OS=Windows 11
+Processor=Ryzen 5 Pro
